@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   render() {
@@ -8,6 +9,9 @@ class Navbar extends Component {
         style={{ backgroundColor: '#7952b3' }}
       >
         <div class="container">
+          <a href="/" className="navbar-brand">
+            <i className={this.props.icon} />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
