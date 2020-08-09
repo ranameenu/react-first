@@ -13,13 +13,15 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Navbar icon="fas fa-home" />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route exact path="/contact" component={Contact} />
-          <Route component={Notfound} />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/contact" component={Contact} />
+            <Route component={Notfound} />
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }

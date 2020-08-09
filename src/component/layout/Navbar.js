@@ -5,15 +5,15 @@ class Navbar extends Component {
   render() {
     return (
       <nav
-        class="navbar navbar-expand-lg navbar-dark"
+        className="navbar navbar-expand-lg navbar-dark"
         style={{ backgroundColor: '#7952b3' }}
       >
-        <div class="container">
-          <a href="/" className="navbar-brand">
+        <div className="container">
+          <Link to="/" className="navbar-brand">
             <i className={this.props.icon} />
-          </a>
+          </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
@@ -21,29 +21,29 @@ class Navbar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  Home <span class="sr-only">(current)</span>
-                </a>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/home">
+                  Home <span className="sr-only">(current)</span>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <Link className="nav-link" to="/users">
                   Users
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">
+              <li className="nav-item">
+                <Link className="nav-link " to="/contact">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

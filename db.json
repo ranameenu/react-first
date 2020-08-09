@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Meenu",
+      "age": 26,
+      "designation": "Front end developer"
+    },
+    {
+      "id": 2,
+      "name": "Rakesh",
+      "age": 26,
+      "designation": "developer"
+    },
+    {
+      "id": 3,
+      "name": "Reena",
+      "age": 26,
+      "designation": "BD"
+    }
+  ]
+}
