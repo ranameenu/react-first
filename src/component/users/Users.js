@@ -17,7 +17,9 @@ class Users extends Component {
             <h4>Users</h4>
           </div>
           <div className="col-6 mt-1">
-            <button className="btn btn-success float-right">Add User</button>
+            <Link to="./AddUser">
+              <button className="btn btn-success float-right">Add User</button>
+            </Link>
           </div>
         </div>
         {this.state.users !== null ? (
