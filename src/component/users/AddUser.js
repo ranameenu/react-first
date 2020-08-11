@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-import Link from 'react-router-dom';
 
 class AddUser extends Component {
   state = {
-    id: '',
     name: '',
     age: '',
     designation: '',
   };
+
+  onChangeName = (e) => {
+    this.setState({ name: e.target.value });
+  };
+
+  onChangeAge = (e) => {
+    this.setState({ age: e.target.value });
+  };
+
+  onChangeDesignation = (e) => {
+    this.setState({ designation: e.target.value });
+  };
+
+  /* onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }; */
+
   render() {
     return (
       <div>
@@ -30,6 +45,16 @@ class AddUser extends Component {
               name="age"
               value={this.state.age}
               onChange={this.onChangeAge}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="designation">Designation</label>
+            <input
+              type="text"
+              className="form-control"
+              name="designation"
+              value={this.state.designation}
+              onChange={this.onChangeDesignation}
             />
           </div>
           <input

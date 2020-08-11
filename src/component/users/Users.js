@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Useritem from './Useritem';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Users extends Component {
   state = { users: null };
@@ -17,7 +18,7 @@ class Users extends Component {
             <h4>Users</h4>
           </div>
           <div className="col-6 mt-1">
-            <Link to="./AddUser">
+            <Link to="/users/add">
               <button className="btn btn-success float-right">Add User</button>
             </Link>
           </div>

@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav
-        className="navbar navbar-expand-lg navbar-dark"
+        className="navbar navbar-expand-md navbar-dark"
         style={{ backgroundColor: '#7952b3' }}
       >
         <div className="container">
@@ -24,7 +24,7 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
                 <Link className="nav-link" to="/home">
                   Home <span className="sr-only">(current)</span>
