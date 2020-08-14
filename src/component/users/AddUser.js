@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 
 class AddUser extends Component {
   state = {
@@ -19,14 +20,23 @@ class AddUser extends Component {
     this.setState({ designation: e.target.value });
   };
 
-  /* onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }; */
+  onSubmit = async (e) => {
+    e.preventDefault();
+    const user = {
+      name: this.state.name,
+      age: this.state.age,
+      designation: this.state.designation,
+    };
+
+    await Axios.post('http://localhost:5000/users', user);
+
+    this.props.history.push('/users');
+  };
 
   render() {
     return (
       <div>
-        <form className="w-50">
+        <form className="w-50 " onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -35,6 +45,7 @@ class AddUser extends Component {
               name="name"
               value={this.state.name}
               onChange={this.onChangeName}
+              required
             />
           </div>
           <div className="form-group">
@@ -45,6 +56,7 @@ class AddUser extends Component {
               name="age"
               value={this.state.age}
               onChange={this.onChangeAge}
+              required
             />
           </div>
           <div className="form-group">
@@ -55,6 +67,7 @@ class AddUser extends Component {
               name="designation"
               value={this.state.designation}
               onChange={this.onChangeDesignation}
+              required
             />
           </div>
           <input

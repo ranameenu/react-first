@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Meenu",
-      "age": 26,
-      "designation": "Front end developer"
+      "name": "meenu",
+      "age": "12",
+      "designation": "front end developer",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Rakesh",
-      "age": 26,
-      "designation": "developer"
-    },
-    {
-      "id": 3,
-      "name": "Reena",
-      "age": 26,
-      "designation": "BD"
+      "name": "meenu",
+      "age": "23",
+      "designation": "engineer",
+      "id": 2
     }
   ]
 }
