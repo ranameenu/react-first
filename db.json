@@ -1,16 +1,16 @@
 {
   "users": [
     {
-      "name": "meenu",
-      "age": "12",
-      "designation": "front end developer",
-      "id": 1
+      "name": "reena",
+      "age": "17",
+      "designation": "BD",
+      "id": 2
     },
     {
-      "name": "meenu",
-      "age": "23",
-      "designation": "engineer",
-      "id": 2
+      "name": "teena",
+      "age": "29",
+      "designation": "backend",
+      "id": 3
     }
   ]
 }

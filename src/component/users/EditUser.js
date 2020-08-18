@@ -1,23 +1,27 @@
 import React, { Component } from "react";
-import Axios from "axios";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-class AddUser extends Component {
+export class editUser extends Component {
   state = {
     name: "",
     age: "",
     designation: "",
   };
 
-  onChangeName = (e) => {
-    this.setState({ name: e.target.value });
-  };
+  async componentDidMount() {
+    const id = this.props.match.params.id;
+    const res = await axios.get(`http://localhost:5000/users/${id}`);
+    const user = res.data;
 
-  onChangeAge = (e) => {
-    this.setState({ age: e.target.value });
-  };
-
-  onChangeDesignation = (e) => {
-    this.setState({ designation: e.target.value });
+    this.setState({
+      name: user.name,
+      age: user.age,
+      designation: user.designation,
+    });
+  }
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   onSubmit = async (e) => {
@@ -27,15 +31,24 @@ class AddUser extends Component {
       age: this.state.age,
       designation: this.state.designation,
     };
-
-    await Axios.post("http://localhost:5000/users", user);
-
+    const id = this.props.match.params.id;
+    await axios.put(`http://localhost:5000/users/${id}`, user);
     this.props.history.push("/users");
   };
 
   render() {
     return (
       <div>
+        <div className="row mt-2">
+          <div className="col-5 ">
+            <h3>EditUser</h3>
+          </div>
+          <div className="col-5 ">
+            <Link to="/users" className="btn btn-success float-right">
+              Back
+            </Link>
+          </div>
+        </div>
         <form className="w-50 " onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -44,7 +57,7 @@ class AddUser extends Component {
               className="form-control"
               name="name"
               value={this.state.name}
-              onChange={this.onChangeName}
+              onChange={this.onChange}
               required
             />
           </div>
@@ -55,7 +68,7 @@ class AddUser extends Component {
               className="form-control"
               name="age"
               value={this.state.age}
-              onChange={this.onChangeAge}
+              onChange={this.onChange}
               required
             />
           </div>
@@ -66,13 +79,13 @@ class AddUser extends Component {
               className="form-control"
               name="designation"
               value={this.state.designation}
-              onChange={this.onChangeDesignation}
+              onChange={this.onChange}
               required
             />
           </div>
           <input
             type="submit"
-            value="Add User"
+            value="Update User"
             className="btn btn-success mt-2"
           />
         </form>
@@ -81,4 +94,4 @@ class AddUser extends Component {
   }
 }
 
-export default AddUser;
+export default editUser;

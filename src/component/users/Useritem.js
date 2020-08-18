@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Useritem extends Component {
   onClick = () => {
@@ -26,13 +27,15 @@ class Useritem extends Component {
               style={point}
               onClick={this.onClick}
             />
-            <i className="fas fa-user-edit ml-2" style={point} />
+            <Link to={`/users/edit/${id}`}>
+              <i className="fas fa-user-edit ml-2" style={point} />
+            </Link>
           </div>
         </div>
       </div>
     );
   }
 }
-const point = { cursor: 'pointer' };
+const point = { cursor: "pointer" };
 
 export default Useritem;
